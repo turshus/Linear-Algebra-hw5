@@ -125,7 +125,7 @@
 	You can write your solution here!
 \end{solution}
 
-
+\newpage
 \question Suppose that $A = 
 \begin{bmatrix}
 	1 & 2 & 0 & 1\\
@@ -138,25 +138,162 @@
 	\part Describe the column space of $A$ by listing a basis for it.
 		
 	\begin{solution}
-		You can write your solution here!
+		The column space can be found by finding the pivots after elemination, so let's elimniate!
+		\[
+			EA = 
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				1 & 1 & 0 \\
+				-2 & 0 & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				-1 & -2 & 1 & 0 \\
+				2 & 4 & 0 & 2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				0 & 0 & 1 & 1 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix}
+		\]
+		It's clear to see now that our pivots are in $x_1$ and $x_3$.  The basis for the column space $A$ can be described by the columns that contain the pivots.
+		\[
+			C(A) = span\left(\left\{
+				\begin{bmatrix}
+					1 \\ -1 \\ 2
+				\end{bmatrix} ,
+				\begin{bmatrix}
+					0 \\ 1 \\ 0
+				\end{bmatrix}
+			\right\}\right)	
+		\]
 	\end{solution}
 	
 	\part Describe the nullspace of $A$ by listing a basis for it.
 	
 	\begin{solution}
-		You can write your solution here!
+		We can start to find the nullspace by referencing our elemination matrix $E$ that we solved above.
+		\[
+			EA = 
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				1 & 1 & 0 \\
+				-2 & 0 & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				-1 & -2 & 1 & 0 \\
+				2 & 4 & 0 & 2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				0 & 0 & 1 & 1 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix}
+		\]
+		We can see by looking at the matrix $EA$ that we have pivots at $x_1$ and $x_3$ which means that our free variables are $x_2$ and $x_4$.  Let's set $x_2 = 1$ and $x_4 = 0$.
+		\[
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				0 & 0 & 1 & 1 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix} =
+			\begin{array}{r}
+				x_1 + 2x_2 + x_4 = 0 \\
+				x_3 + x_4 = 0
+			\end{array}
+		\]
+		\[
+			\begin{array}{c}
+				x_1 + 2(1) + 0 = 0 \rightarrow x_1 = -2	\\
+				x_3 + 0 = 0 \rightarrow x_3 = 0
+			\end{array}
+		\]
+		We now have one solution. We can switch the values of $x_2$ and $x_4$ to get our 2nd solution.
+		\[
+			\begin{array}{c}
+				x_1 + 2(0) + 1 = 0 \rightarrow x_1 = -1	\\
+				x_3 + 1 = 0 \rightarrow x_3 = -1
+			\end{array}
+		\]
+		We can now describe the nullspace with the basis for it:
+		\[
+			N(A) = span\left(\left\{
+				\begin{bmatrix}
+					-1 \\ 0 \\ -1 \\1
+				\end{bmatrix},\begin{bmatrix}
+					-2 \\ 1 \\ 0 \\ 0
+			\end{bmatrix}
+			\right\}\right)
+		\]
 	\end{solution}
-	
+	\newpage
 	\part Describe the left nullspace of $A$ by listing a basis for it.
 	
 	\begin{solution}
-		You can write your solution here!
+		We can find the left nullspace of $A$ by referencing the elemination we did on $A$ in the problem above.
+		\[
+			EA = 
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				1 & 1 & 0 \\
+				-2 & 0 & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				-1 & -2 & 1 & 0 \\
+				2 & 4 & 0 & 2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				0 & 0 & 1 & 1 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix}
+		\]
+		Pay attention to row 3 in $EA$.  It is all 0's.  Because the left nullspace is just the transpose of the nullspace, we can think of the rows as columns and vice versa.  This would mean that row 3 in $EA$ would actually be column 3 in $EA^T$.  This would mean that the third row in our elemination matrix $E$ would be our only solution to the left nullspace.
+		\[
+			N(A)^T	= span \left(\left\{
+				\begin{bmatrix}
+					-2 \\ 0 \\ 1
+				\end{bmatrix}
+				\right\}\right)
+		\]
 	\end{solution}
 	
 	\part Describe the row space of $A$ by listing a basis for it.
 	
 	\begin{solution}
-		You can write your solution here!
+		Much like finding the column space, we can start by finding $EA$:
+		\[
+			EA = 
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				1 & 1 & 0 \\
+				-2 & 0 & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				-1 & -2 & 1 & 0 \\
+				2 & 4 & 0 & 2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				1 & 2 & 0 & 1 \\
+				0 & 0 & 1 & 1 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix}
+		\]
+		Now we simply pay attention to where the pivots are located in the rows, and those are our answers.  The pivots are located at $x_1$ and $x_3$.
+		\[
+			C(A)^T = span \left(\left\{
+				\begin{bmatrix}
+					1 & 2 & 0 & 1
+				\end{bmatrix},
+				\begin{bmatrix}
+					0 & 0 & 1 & 1
+				\end{bmatrix}
+			\right\}\right)	
+		\]
 	\end{solution}
 \end{parts}
 
