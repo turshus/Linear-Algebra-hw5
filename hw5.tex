@@ -122,7 +122,33 @@
 
 
 \begin{solution}
-	You can write your solution here!
+	In order for $C(A) = C(B)$, $\vec{b}$ must be a linear combination of some column in matrix $A$.  In order for $C(A) < C(B)$, $\vec{b}$ must be linearly independent of any columns in matrix $A$.  In order for $A\vec{x}=\vec{b}$ \emph{and} $B\vec{x}=\vec{b}$ to both have solutions, $\vec{b}$ simply has to be a linear combination of some column in its corresponding matrix.  For example:
+	\[
+		A = \begin{bmatrix}
+			a & b & c \\
+			d & e & f \\
+			g & h & i
+		\end{bmatrix}
+		\begin{bmatrix}
+			0 \\ 0 \\ 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+			c \\ f \\ i
+		\end{bmatrix}
+	\]
+	\[
+		B = \begin{bmatrix}
+			a & b & c & j \\
+			d & e & f & k \\
+			g & h & i & l
+		\end{bmatrix}
+		\begin{bmatrix}
+			0 \\ 0 \\ 0 \\ 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+			j \\ k \\ l
+		\end{bmatrix}
+	\]
 \end{solution}
 
 \newpage
