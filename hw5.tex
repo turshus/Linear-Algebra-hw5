@@ -1,0 +1,168 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{bm}
+\usepackage{hyperref}
+
+
+\title{Homework 5\\
+	Due \DTMdate{2022-02-11} %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ %\today %You can remove the first % in this line to show the current days date.
+	}
+\author{%Your Name %You should probably change this to your actual name and remove the first %, at least if you want credit.
+	}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+
+
+\begin{questions}
+		\question Consider the statements about symmetric matrices and indicate if the statements are true or false. If a statement is true provide a proof, otherwise give a counterexample. 
+		
+		\begin{parts}
+			\part The block matrix $\begin{bmatrix} 0 & A\\ A & 0 \end{bmatrix}$ is automatically symmetric.
+			\begin{solution}
+				You can write your solution here!
+			\end{solution}
+			\part If $A$ and $B$ are symmetric then $AB$ is symmetric.
+			\begin{solution}
+				You can write your solution here!
+			\end{solution}
+			\part If $A$ is not symmetric, then $A^{-1}$ is not symmetric.
+			\begin{solution}
+				You can write your solution here!
+			\end{solution}
+			\part If $A$, $B$, and $C$ are symmetric, then $(ABC)^T=CBA$
+			\begin{solution}
+				You can write your solution here!
+			\end{solution}
+		\end{parts}
+		
+		\question \S 3.1 \# 10. Which of the following subsets of $\mathbb{R}^3$ are actually subspaces? You should either prove that the set is a subspace or show that the set does not have one of the properties of subspaces.
+	
+	\begin{parts}
+		\part The plane of vectors $(b_1, b_2, b_3)$ with $b_1 = b_2$.
+		\begin{solution}
+			We can re-write the plane of vectors to more accurately represent our constraints:
+            \[
+                \begin{bmatrix}
+                    b_1 & b_1 & b_2
+                \end{bmatrix}
+            \]
+            This is a subset of $\mathbb{R}^3$ and we can prove it by proving that the sum of any two vectors within the subsetis also in the subset:
+            \[
+                \begin{bmatrix}
+                    b_1 \\ b_1 \\ b_2
+                \end{bmatrix} +
+                \begin{bmatrix}
+                    b_3 \\ b_3 \\ b_4
+                \end{bmatrix} =
+                \begin{bmatrix}
+                    b_1 + b_3 \\
+                    b_1 + b_3 \\
+                    b_2 + b_4
+                \end{bmatrix}
+            \]
+            As we can see, the first two elemetns of the vectors equal eqch other which satisfies this constraint.  We also need to prove that any scalar multiple of a vector in the subset is also in the subset.
+            \[
+                \alpha \begin{bmatrix}
+                    b_1 \\ b_1 \\ b_2
+                \end{bmatrix} +
+                \beta \begin{bmatrix}
+                    b_3 \\ b_3 \\ b_4
+                \end{bmatrix}
+            \]
+            \[
+                \begin{bmatrix}
+                    \alpha \cdot b_1 \\
+                    \alpha \cdot b_1 \\
+                    \alpha \cdot b_2
+                \end{bmatrix} +
+                \begin{bmatrix}
+                    \beta \cdot b_3 \\
+                    \beta \cdot b_3 \\
+                    \beta \cdot b_4
+                \end{bmatrix}
+            \]
+		\end{solution}
+		\part The plane of vectors with $b_1 = 1$.
+		\begin{solution}
+			You can write your solution here!
+		\end{solution}
+		\part The vectors $(b_1, b_2, b_3)$ with $b_1b_2b_3 = 0$.
+		\begin{solution}
+			You can write your solution here!
+		\end{solution}
+		\part All linear combinations of $\vec{v} = (1,4,0)$ and $\vec{w} = (2,2,2)$.
+		\begin{solution}
+			You can write your solution here!
+		\end{solution}
+		\part All vectors $(b_1, b_2, b_3)$ with $b_1 + b_2 + b_3 = 0$.
+		\begin{solution}
+			You can write your solution here!
+		\end{solution}
+		\part All vectors $(b_1, b_2, b_3)$ with $b_1 \leq b_2 \leq b_3$.
+		\begin{solution}
+			You can write your solution here!
+		\end{solution}
+	\end{parts}
+
+	\question An exercise using the outer-product method of matrix multiplication. Every matrix with rank $r$ can be written as the sum of $r$ rank 1 matices. An easy way to write a rank 1 matrix is using an outer-product (recall: $\vec{u}\vec{v}^T$ is an outer-product). Construct a matrix $A$ with rank 2 that has $C(A) = span((1,2,4), (2,2,1))$ and $C(A^T) = span((1,0),(1,1))$, you should use outer-products to find $A$. Then find a factorization on $A$ into a 3 by 2 matrix times a 2 by 2 matrix, you should think backwards about the outer product method of matrix multiplication to help you.
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+\question Suppose that $A$ is a $m \times n$ matrix and $\vec{b}$ is a $m \times 1$ vector. Let $B$ be the $m \times (n+1)$ matrix formed by adding $\vec{b}$ to $A$, so $B = [A \, \vec{b}]$. What must be true so that $C(A)=C(B)$? What must be true if $C(A)$ is smaller that $C(B)$? Explain what must be true for $A \vec{x} = \vec{b}$ and $B \vec{x} = \vec{b}$ to have solutions. 
+
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+
+\question Suppose that $A = 
+\begin{bmatrix}
+	1 & 2 & 0 & 1\\
+	-1 & -2 & 1 & 0\\
+	2 & 4 & 0 & 2
+\end{bmatrix}$
+\begin{parts}
+	
+
+	\part Describe the column space of $A$ by listing a basis for it.
+		
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part Describe the nullspace of $A$ by listing a basis for it.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part Describe the left nullspace of $A$ by listing a basis for it.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part Describe the row space of $A$ by listing a basis for it.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+\end{parts}
+
+
+\end{questions}
+
+
+
+\end{document}
