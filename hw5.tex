@@ -24,22 +24,152 @@
 		\begin{parts}
 			\part The block matrix $\begin{bmatrix} 0 & A\\ A & 0 \end{bmatrix}$ is automatically symmetric.
 			\begin{solution}
-				You can write your solution here!
+				This is true.  A great way to test symmetry is to simply take the transpose of the matrix.  If they are the same, then they are symmetric.
+				\[
+					A = \begin{bmatrix}
+						0 & A \\
+						A & 0
+					\end{bmatrix}	
+				\]
+				\[
+					A^T = 	\begin{bmatrix}
+						0 & A \\
+						A & 0
+					\end{bmatrix}
+				\]
+				Since we can conclude that $A = A^T$, we can conclude that this is symmetric.
 			\end{solution}
 			\part If $A$ and $B$ are symmetric then $AB$ is symmetric.
 			\begin{solution}
-				You can write your solution here!
+				Besides for a few specific examples, this is generally false.  Multiplying two symmetric matrices will most often result in a non-symmetric matrix.
+				\[
+					A = \begin{bmatrix}
+						1 & 2 & 3 \\
+						2 & 1 & 2 \\
+						3 & 2 & 1
+					\end{bmatrix}	
+				\]
+				\[
+					B = \begin{bmatrix}
+						3 & 2 & 1 \\
+						2 & 3 & 2 \\
+						1 & 2 & 3
+					\end{bmatrix}	
+				\]
+				\[
+					AB = \begin{bmatrix}
+						1 & 2 & 3 \\
+						2 & 1 & 2 \\
+						3 & 2 & 1
+					\end{bmatrix}
+					\begin{bmatrix}
+						3 & 2 & 1 \\
+						2 & 3 & 2 \\
+						1 & 2 & 3
+					\end{bmatrix} =
+					\begin{bmatrix}
+						10 & 14 & 14 \\
+						10 & 11 & 10 \\
+						14 & 14 & 10
+					\end{bmatrix}
+				\]
+				We can see that $A$ and $B$ are clearly symmetric as they both equal their transposes.  Their product does not.
+				\[
+					\begin{bmatrix}
+						10 & 14 & 14 \\
+						10 & 11 & 10 \\
+						14 & 14 & 10
+					\end{bmatrix} \neq
+					\begin{bmatrix}
+						10 & 10 & 14 \\
+						14 & 11 & 14 \\
+						14 & 10 & 10
+					\end{bmatrix}
+				\] 
+				\[AB \neq AB^T\]
 			\end{solution}
+			\newpage
 			\part If $A$ is not symmetric, then $A^{-1}$ is not symmetric.
 			\begin{solution}
-				You can write your solution here!
+				This is true.  The inverse of matrix $A$ will have a negative value of itself in the same spot meaning that if matrix $A$ was not symmetric, it would be impossible for $A^{-1}$ to be.
 			\end{solution}
 			\part If $A$, $B$, and $C$ are symmetric, then $(ABC)^T=CBA$
 			\begin{solution}
-				You can write your solution here!
+				This is true.  We can think of this as simply flipping the order in which we multiply the matrices or just flipping the final result.
+				\[
+					A = \begin{bmatrix}
+						1 & 2 & 3 \\
+						2 & 1 & 2 \\
+						3 & 2 & 1
+					\end{bmatrix}
+					B = \begin{bmatrix}
+						3 & 2 & 1 \\
+						2 & 3 & 2 \\
+						1 & 2 & 3
+					\end{bmatrix}
+					C = \begin{bmatrix}
+						2 & 3 & 1 \\
+						3 & 2 & 3 \\
+						1 & 3 & 2
+					\end{bmatrix}	
+				\]
+				\[
+					(ABC) =
+					\begin{bmatrix}
+						1 & 2 & 3 \\
+						2 & 1 & 2 \\
+						3 & 2 & 1
+					\end{bmatrix}
+					\begin{bmatrix}
+						3 & 2 & 1 \\
+						2 & 3 & 2 \\
+						1 & 2 & 3
+					\end{bmatrix}
+					\begin{bmatrix}
+						2 & 3 & 1 \\
+						3 & 2 & 3 \\
+						1 & 3 & 2
+					\end{bmatrix}	=
+					\begin{bmatrix}
+						76 & 100 & 80 \\
+						63 & 82 & 63 \\
+						80 & 100 & 76
+					\end{bmatrix}	
+				\]
+				\[
+					(ABC)^T = \begin{bmatrix}
+						76 & 63 & 80 \\
+						100 & 82 & 100 \\
+						80 & 63 & 76
+					\end{bmatrix}
+				\]
+				Now we can solve for $CBA$ and compare the two.
+				\[
+					\begin{bmatrix}
+						2 & 3 & 1 \\
+						3 & 2 & 3 \\
+						1 & 3 & 2
+					\end{bmatrix}
+					\begin{bmatrix}
+						3 & 2 & 1 \\
+						2 & 3 & 2 \\
+						1 & 2 & 3
+					\end{bmatrix}
+					\begin{bmatrix}
+						1 & 2 & 3 \\
+						2 & 1 & 2 \\
+						3 & 2 & 1
+					\end{bmatrix} =
+					\begin{bmatrix}
+						76 & 63 & 80 \\
+						100 & 82 & 100 \\
+						80 & 63 & 76
+					\end{bmatrix}
+				\]
 			\end{solution}
 		\end{parts}
 		
+		\newpage
 		\question \S 3.1 \# 10. Which of the following subsets of $\mathbb{R}^3$ are actually subspaces? You should either prove that the set is a subspace or show that the set does not have one of the properties of subspaces.
 	
 	\begin{parts}
@@ -89,23 +219,81 @@
 		\end{solution}
 		\part The plane of vectors with $b_1 = 1$.
 		\begin{solution}
-			You can write your solution here!
+			This plane is not a subspace of $\mathbb{R}^3$ as it fails both the addition and multiplication tests.
+			\[
+				\begin{bmatrix}
+					1 \\ a_1 \\ a_2
+				\end{bmatrix} +
+				\begin{bmatrix}
+					1 \\ b_1 \\ b_2
+				\end{bmatrix} =
+				\begin{bmatrix}
+					1 + 1 \\
+					a_1 + b_1 \\
+					a_2 + b_2
+				\end{bmatrix} =
+				\begin{bmatrix}
+					2 \\ 
+					a_1 + b_1 \\
+					a_2 + b_2
+				\end{bmatrix}
+			\]
+			This fails as $b_1$ adds together to become that fails the constraint.
 		\end{solution}
 		\part The vectors $(b_1, b_2, b_3)$ with $b_1b_2b_3 = 0$.
 		\begin{solution}
-			You can write your solution here!
+			This is false.  The only scenario where this would prove true is if one of the vectors was the zero vector, however, there are many examples of vectors that are non-zero.
 		\end{solution}
 		\part All linear combinations of $\vec{v} = (1,4,0)$ and $\vec{w} = (2,2,2)$.
 		\begin{solution}
-			You can write your solution here!
+			This is true.  We could write this in the form $\vec{s} = \alpha\vec{v}+\beta\vec{w}$ where $\alpha$ and $\beta$ are any scalar.  These parameters describe the subspace it exists in.
 		\end{solution}
 		\part All vectors $(b_1, b_2, b_3)$ with $b_1 + b_2 + b_3 = 0$.
 		\begin{solution}
-			You can write your solution here!
+			This is true.  Adding different vectors that follow this principle will always have their result follow the same principle. Let's look at an example:
+			\[
+				\begin{bmatrix}
+					4 & 7 & -11
+				\end{bmatrix} +
+				\begin{bmatrix}
+					3 & -1 & -2
+				\end{bmatrix} = 
+				\begin{bmatrix}
+					7 & 6 & -13
+				\end{bmatrix}
+			\]
+			As we can see the resulting vector follows the same rules.  We can now test it for multiplication:
+			\[
+				\alpha\begin{bmatrix}
+					4 & 7 & -11
+				\end{bmatrix} +
+				\beta\begin{bmatrix}
+					3 & -1 & -2
+				\end{bmatrix} = 
+				\begin{bmatrix}
+					4\alpha + 3\beta \\
+					7\alpha - \beta \\
+					-11\alpha - 2\beta
+				\end{bmatrix}
+			\]
+			\[
+				(4\alpha + 3\beta) + (7\alpha - \beta) + (-11\alpha - 2\beta) = \alpha(4 + 7 - 11) + \beta(3 - 1 - 2) = \alpha \cdot 0 + \beta \cdot 0 = 0
+			\]
+			This is also true, thus this passes.
 		\end{solution}
 		\part All vectors $(b_1, b_2, b_3)$ with $b_1 \leq b_2 \leq b_3$.
 		\begin{solution}
-			You can write your solution here!
+			This is false.  For all positive values it would be true, however, imagine if any of these values were negative.
+			\[
+				-2 \cdot \begin{bmatrix}
+					-3 & 1 & 2
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					6 & -2 & -4
+				\end{bmatrix}
+			\]
+			This has effectively reversed the order and proved this false.
 		\end{solution}
 	\end{parts}
 
@@ -192,7 +380,7 @@
 		\end{bmatrix}
 	\]
 \end{solution}
-
+\newpage
 \question Suppose that $A$ is a $m \times n$ matrix and $\vec{b}$ is a $m \times 1$ vector. Let $B$ be the $m \times (n+1)$ matrix formed by adding $\vec{b}$ to $A$, so $B = [A \, \vec{b}]$. What must be true so that $C(A)=C(B)$? What must be true if $C(A)$ is smaller that $C(B)$? Explain what must be true for $A \vec{x} = \vec{b}$ and $B \vec{x} = \vec{b}$ to have solutions. 
 
 
