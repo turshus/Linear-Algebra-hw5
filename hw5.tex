@@ -10,14 +10,11 @@
 \title{Homework 5\\
 	Due \DTMdate{2022-02-11} %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
 	}
-\date{ %\today %You can remove the first % in this line to show the current days date.
-	}
-\author{%Your Name %You should probably change this to your actual name and remove the first %, at least if you want credit.
-	}
+\author{Connor Meads - A01853906}
 \begin{document}
 \maketitle
 
-\printanswers %comment out this line to hide your answers.
+\printanswers
 
 
 
@@ -115,7 +112,85 @@
 	\question An exercise using the outer-product method of matrix multiplication. Every matrix with rank $r$ can be written as the sum of $r$ rank 1 matices. An easy way to write a rank 1 matrix is using an outer-product (recall: $\vec{u}\vec{v}^T$ is an outer-product). Construct a matrix $A$ with rank 2 that has $C(A) = span((1,2,4), (2,2,1))$ and $C(A^T) = span((1,0),(1,1))$, you should use outer-products to find $A$. Then find a factorization on $A$ into a 3 by 2 matrix times a 2 by 2 matrix, you should think backwards about the outer product method of matrix multiplication to help you.
 
 \begin{solution}
-	You can write your solution here!
+	We can begin to find matrix $A$ by multiplying the column space by the row space:
+	\[
+		\begin{bmatrix}
+			1 \\ 2 \\ 4
+		\end{bmatrix} \cdot
+		\begin{bmatrix}
+			1 & 0
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & 0 \\
+			2 & 0 \\
+			4 & 0 
+		\end{bmatrix}
+	\]
+	\[
+		\begin{bmatrix}
+			2 \\ 2 \\ 1
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			1 & 1
+		\end{bmatrix} =
+		\begin{bmatrix}
+			2 & 2 \\
+			2 & 2 \\
+			1 & 1
+		\end{bmatrix}
+	\]
+	These products are always going to be legal dimensions to add by:
+	\[
+		\begin{bmatrix}
+			1 & 0 \\
+			2 & 0 \\
+			4 & 0 
+		\end{bmatrix} +
+		\begin{bmatrix}
+			2 & 2 \\
+			2 & 2 \\
+			1 & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			3 & 2 \\
+			4 & 2 \\
+			5 & 1
+		\end{bmatrix}
+	\]
+	Clearly we can see that column 2 of that result is in the column space.  Column 1 is also in the column space.
+	Now we can use the outer-product method of matrix multiplication:
+	\[
+		c_1\cdot r_1 + c_2\cdot r_2	
+	\]
+	\[
+		\begin{bmatrix}
+			1 \\ 2 \\ 4
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & 0
+		\end{bmatrix} +
+		\begin{bmatrix}
+			2 \\ 2 \\ 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & 1
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			1 & 2 \\
+			2 & 2 \\
+			4 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & 0 \\
+			1 & 1
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			3 & 2 \\
+			4 & 2 \\
+			5 & 1
+		\end{bmatrix}
+	\]
 \end{solution}
 
 \question Suppose that $A$ is a $m \times n$ matrix and $\vec{b}$ is a $m \times 1$ vector. Let $B$ be the $m \times (n+1)$ matrix formed by adding $\vec{b}$ to $A$, so $B = [A \, \vec{b}]$. What must be true so that $C(A)=C(B)$? What must be true if $C(A)$ is smaller that $C(B)$? Explain what must be true for $A \vec{x} = \vec{b}$ and $B \vec{x} = \vec{b}$ to have solutions. 
